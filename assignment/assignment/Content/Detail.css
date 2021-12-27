@@ -1,0 +1,52 @@
+﻿.size-80 {
+    width: 80px;
+    height: 80px;
+}
+
+.rect {
+    border-radius: 4px;
+}
+
+.flex {
+    display: flex;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.letter-3 {
+    letter-spacing: 3px;
+}
+
+.blue {
+    color: var(--color6);
+    cursor: pointer;
+}
+
+.bt__bth {
+    border: none;
+    outline: none;
+    background: white;
+    color: var(--color6);
+    cursor: pointer;
+}
+
+    .bt__bth:focus {
+        border: none;
+        outline: none;
+    }
+
+

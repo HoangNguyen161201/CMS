@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "ShowAccounts";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Show Accounts __&#128512; &#128513;
+</p>
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<div class="items">
+    @{ Html.RenderAction("Staffs");}
+    @{ Html.RenderAction("Trainers");}
+</div>
+<script>
+    document.getElementById('search').addEventListener("input", (e) => {
+        search(e.target.value, ['username', 'fullname', 'password', 'id', 'roll'])
+    })
+</script>
+

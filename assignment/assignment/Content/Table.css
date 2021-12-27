@@ -1,0 +1,38 @@
+﻿table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.123);
+}
+
+tr {
+    padding: 20px;
+    height: 48px;
+}
+
+thead {
+    background: var(--color1);
+}
+
+th {
+    text-align: left;
+    font-weight: 400;
+    color: white;
+}
+
+th, td {
+    padding: 20px;
+}
+
+tbody tr {
+    border-bottom: 1px solid gray;
+}
+
+    tbody tr:nth-of-type(even) {
+        background-color: var(--color2)
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 2px solid var(--color1);
+    }

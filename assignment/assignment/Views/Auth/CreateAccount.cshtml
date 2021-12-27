@@ -1,0 +1,104 @@
+﻿
+@model assignment.Models.Register
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<p class="title">
+    Create Account __ &#127765; &#127764; &#127763;
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.Id) <span>*</span>
+            </p>
+            <div class="input inputBlur">
+                <i class="fas fa-key"></i>
+                @Html.TextBoxFor(model => model.Id, new { placeholder = "Enter your Id ..." })
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Id, null, new { @class = "error" })
+    </div>
+
+    <div class="gridForm">
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.FullName) <span>*</span>
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.FullName, new { placeholder = "Enter your fullname ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.FullName, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Username) <span>*</span>
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-user"></i>
+                    @Html.TextBoxFor(model => model.Username, new { placeholder = "Enter your username ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Username, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Password) <span>*</span>
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    @Html.PasswordFor(model => model.Password, new { placeholder = "Enter your passwrord ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.ConfirmPassword)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    @Html.PasswordFor(model => model.ConfirmPassword, new { placeholder = "Enter your re-password ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "error" })
+        </div>
+    </div>
+    <div class="formControll">
+        <p class='label_input'>
+            Password <span>*</span>
+        </p>
+        <div class="checkBox">
+            <div>
+                @Html.RadioButtonFor(model => model.Roll, "Staff", new { @Checked = "checked" })
+                <span>Staff</span>
+            </div>
+            <div>
+                @Html.RadioButtonFor(model => model.Roll, "Trainer", false)
+                <span>Trainer</span>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+    <button class="bt__default">Create</button>
+}

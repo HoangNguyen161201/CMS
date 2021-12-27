@@ -1,0 +1,130 @@
+﻿.information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.linkFunc {
+    text-decoration: none;
+    color: gray;
+    letter-spacing: 3px;
+    font-size: 14px;
+    position: relative;
+}
+
+    .linkFunc::before {
+        content: '';
+        margin-right: 5px;
+        display: inline-block;
+        height: 11px;
+        background-color: var(--color1);
+        position: relative;
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    .linkFunc:hover {
+        color: var(--color1);
+    }
+
+        .linkFunc:hover::before {
+            transform: scaleX(1);
+            transition: 0.2s;
+            width: 10px;
+        }
+
+
+
+
+
+
+.formControll {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.label_input {
+    font-size: 16px;
+}
+
+.gridForm {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+textarea {
+    padding-top: 15px!important;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    min-height: 200px;
+}
+
+form {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    letter-spacing: 3px;
+}
+
+.error2 {
+    color: red;
+    margin-top: 20px;
+}
+
+.error {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    display: block;
+    color: red;
+}
+
+.bt__default {
+    width: min-content;
+    padding: 0px 20px;
+    height: 48px;
+    border: none;
+    color: white;
+    background-color: var(--color1);
+    border-radius: 4px;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+    .bt__default:hover {
+        background-color: var(--color5);
+        transform: scale(1.1);
+    }
+
+    .bt__default:active  {
+        background-color: var(--color2);
+        transform: scale(1);
+        transition: 0.1s;
+    }
+
+.checkBox {
+    display: flex;
+    gap: 30px;
+}
+
+    .checkBox div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+.select {
+    border: none;
+    outline: none;
+    position: relative;
+    width: 100%;
+}

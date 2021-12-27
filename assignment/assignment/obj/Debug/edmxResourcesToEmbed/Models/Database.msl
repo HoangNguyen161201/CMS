@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="asignmentModelStoreContainer" CdmEntityContainer="asignmentEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="asignmentModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="Admin_username" ColumnName="Admin_username" />
+          <ScalarProperty Name="Admin_password" ColumnName="Admin_password" />
+          <ScalarProperty Name="Admin_fullname" ColumnName="Admin_fullname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssignCourses">
+      <EntityTypeMapping TypeName="asignmentModel.AssignCourse">
+        <MappingFragment StoreEntitySet="AssignCourse">
+          <ScalarProperty Name="AssCourseId" ColumnName="AssCourseId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssignTopics">
+      <EntityTypeMapping TypeName="asignmentModel.AssignTopic">
+        <MappingFragment StoreEntitySet="AssignTopic">
+          <ScalarProperty Name="AssTopicId" ColumnName="AssTopicId" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Courses">
+      <EntityTypeMapping TypeName="asignmentModel.Course">
+        <MappingFragment StoreEntitySet="Course">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Course_name" ColumnName="Course_name" />
+          <ScalarProperty Name="Course_description" ColumnName="Course_description" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="DateToStart" ColumnName="DateToStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseCategories">
+      <EntityTypeMapping TypeName="asignmentModel.CourseCategory">
+        <MappingFragment StoreEntitySet="CourseCategory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Category_name" ColumnName="Category_name" />
+          <ScalarProperty Name="Category_description" ColumnName="Category_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="asignmentModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="Topic_name" ColumnName="Topic_name" />
+          <ScalarProperty Name="Topic_description" ColumnName="Topic_description" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainees">
+      <EntityTypeMapping TypeName="asignmentModel.Trainee">
+        <MappingFragment StoreEntitySet="Trainee">
+          <ScalarProperty Name="TraineeId" ColumnName="TraineeId" />
+          <ScalarProperty Name="Trainee_username" ColumnName="Trainee_username" />
+          <ScalarProperty Name="Trainee_password" ColumnName="Trainee_password" />
+          <ScalarProperty Name="Trainee_fullname" ColumnName="Trainee_fullname" />
+          <ScalarProperty Name="Trainee_age" ColumnName="Trainee_age" />
+          <ScalarProperty Name="Trainee_birthday" ColumnName="Trainee_birthday" />
+          <ScalarProperty Name="Trainee_education" ColumnName="Trainee_education" />
+          <ScalarProperty Name="Trainee_programming_language" ColumnName="Trainee_programming_language" />
+          <ScalarProperty Name="Trainee_TOEIC_score" ColumnName="Trainee_TOEIC_score" />
+          <ScalarProperty Name="Trainee_exprience_details" ColumnName="Trainee_exprience_details" />
+          <ScalarProperty Name="Trainee_department" ColumnName="Trainee_department" />
+          <ScalarProperty Name="Trainee_location" ColumnName="Trainee_location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trainers">
+      <EntityTypeMapping TypeName="asignmentModel.Trainer">
+        <MappingFragment StoreEntitySet="Trainer">
+          <ScalarProperty Name="TrainerId" ColumnName="TrainerId" />
+          <ScalarProperty Name="Trainer_username" ColumnName="Trainer_username" />
+          <ScalarProperty Name="Trainer_password" ColumnName="Trainer_password" />
+          <ScalarProperty Name="Trainer_fullname" ColumnName="Trainer_fullname" />
+          <ScalarProperty Name="Trainer_type" ColumnName="Trainer_type" />
+          <ScalarProperty Name="Trainer_email" ColumnName="Trainer_email" />
+          <ScalarProperty Name="trainer_phone" ColumnName="trainer_phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Training_staff">
+      <EntityTypeMapping TypeName="asignmentModel.Training_staff">
+        <MappingFragment StoreEntitySet="Training_staff">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="Staff_username" ColumnName="Staff_username" />
+          <ScalarProperty Name="Staff_password" ColumnName="Staff_password" />
+          <ScalarProperty Name="Staff_fullname" ColumnName="Staff_fullname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

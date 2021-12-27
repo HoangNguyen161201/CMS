@@ -1,0 +1,27 @@
+﻿@model IEnumerable<assignment.Models.Trainer>
+
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    <div class="item">
+        <img class="avatar" src="@Html.DisplayFor(modelItem => item.image)" />
+        <div class='information'>
+            <div>
+                <p class="text"><span>Id user  :</span> <span class="id">@Html.DisplayFor(modelItem => item.TrainerId)</span></p>
+                <p class="text"><span>Full name:</span> <span class="fullname">@Html.DisplayFor(modelItem => item.Trainer_fullname)</span></p>
+                <p class="text"><span>Username :</span> <span class="username">@Html.DisplayFor(modelItem => item.Trainer_username)</span></p>
+                <p class="text"><span>Password :</span> <span class="password">@Html.DisplayFor(modelItem => item.Trainer_password)</span></p>
+                <p class="text"><span>Roll :</span> <span class="roll">@Html.DisplayFor(modelItem => item.roll)</span></p>
+            </div>
+            <div>
+                <nav>
+                    <a href="/admin/edit-trainer/@Html.DisplayFor(modelItem => item.TrainerId)" class="linkFunc">Update</a> /
+                    <a class="linkFunc delete" href="#" data-action="/Trainer/Delete" data-name-input="TrainerId" data-name="trainer" data-input="@Html.DisplayFor(modelItem => item.TrainerId)">Delete</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+}

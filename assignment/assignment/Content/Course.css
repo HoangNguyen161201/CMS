@@ -1,0 +1,28 @@
+﻿.item {
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.089);
+}
+
+
+.item__course {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-decoration: none;
+}
+
+    .item__course h3 {
+        color: black;
+    }
+
+    .item__course p {
+        line-height: 30px;
+        color: gray;
+    }
+
+.course__img {
+    width: 100%;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}

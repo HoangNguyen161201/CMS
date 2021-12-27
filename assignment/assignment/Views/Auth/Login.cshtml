@@ -1,0 +1,66 @@
+﻿@model assignment.Models.Login
+
+@{
+    Layout = "../Shared/_Login.cshtml";
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<main>
+    <div class='box-form'>
+        <div class='main-form'>
+            @using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { @class = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h3>Sign in</h3>
+                <div class="items-form">
+                    <div>
+                        <div class="formControll">
+                            <p class='label_input'>
+                                @Html.LabelFor(model => model.Username) <span>*</span>
+                            </p>
+                            <div class="input inputBlur">
+                                <i class="fas fa-user"></i>
+                                @Html.TextBoxFor(model => model.Username, new { placeholder = "Enter your username ..." })
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Username, null, new { @class = "error" })
+                    </div>
+                    <div>
+                        <div class="formControll">
+                            <p class='label_input'>
+                                @Html.LabelFor(model => model.Password) <span>*</span>
+                            </p>
+                            <div class="input inputBlur">
+                                <i class="fas fa-unlock"></i>
+                                @Html.PasswordFor(model => model.Password, new { placeholder = "Enter your password ..." })
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Password, null, new { @class = "error" })
+                    </div>
+                    <div class="formControll">
+                        @Html.LabelFor(model => model.Roll, htmlAttributes: new { @class = "label_input" })
+                        <div class="input inputBlur">
+                            <select class="select" name="Roll">
+                                <option class="value" value="Admin"> Admin</option>
+                                <option class="value" value="Staff"> Staff</option>
+                                <option class="value" value="Trainer"> Trainer</option>
+                                <option class="value" value="Trainee"> Trainee</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">
+                    Login
+                </button>
+            }
+        </div>
+    </div>
+    <div class='image'></div>
+</main>
