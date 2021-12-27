@@ -11,11 +11,9 @@ namespace assignment.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Admin
     {
-
         public int AdminId { get; set; }
         public string Admin_username { get; set; }
         public string Admin_password { get; set; }

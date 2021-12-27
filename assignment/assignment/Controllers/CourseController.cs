@@ -104,6 +104,7 @@ namespace assignment.Controllers
             }
             catch
             {
+                TempData["Error"] = "update course Error";
                 return View();
             }
         }

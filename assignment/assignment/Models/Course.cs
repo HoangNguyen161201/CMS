@@ -41,7 +41,7 @@ namespace assignment.Models
 
         [Display(Name = "Time to start")]
         public Nullable<System.DateTime> DateToStart { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignCourse> AssignCourses { get; set; }
         public virtual CourseCategory CourseCategory { get; set; }

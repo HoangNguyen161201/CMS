@@ -1,0 +1,45 @@
+﻿@model assignment.Models.CourseCategory
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Create Category __ &#128755; &#9875;
+</p>
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="gridForm">
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Category_name) <span>*</span>
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Category_name, new { placeholder = "Enter your fullname ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Category_name, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Category_description) <span>*</span>
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Category_description, new { placeholder = "Enter description ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Category_description, null, new { @class = "error" })
+        </div>
+    </div>
+    <button class="bt__default">Create</button>
+}

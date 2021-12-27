@@ -1,0 +1,43 @@
+﻿@model IEnumerable<assignment.Models.CourseCategory>
+
+@{
+    ViewBag.Title = "category";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Show categories __ &#129395; &#128528;
+</p>
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<div class="categories">
+    @foreach (var item in Model)
+    {
+        <a href="/staff/details-category/@Html.DisplayFor(modelItem=> item.CategoryId)" class="category">
+            <div class="ct__circle"></div>
+            <img class="category__img" src="@Html.DisplayFor(modelItem=> item.image)" />
+            <p>
+                @Html.DisplayFor(modelItem => item.Category_name)
+            </p>
+        </a>
+    }
+</div>
+
+
+
+
+

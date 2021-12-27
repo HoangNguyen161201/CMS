@@ -70,7 +70,7 @@ namespace assignment.Models
         [DataType(DataType.Password)]
         [Compare("Trainee_password", ErrorMessage = "Confirm password does not match")]
         public string ConfirmPassword { get; set; }
-        
+
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignCourse> AssignCourses { get; set; }

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<assignment.Models.Course>
+
+@{
+    Layout = null;
+}
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    <div class="items">
+        @foreach (var item in Model)
+        {
+            <a href='/staff/details-course/@Html.DisplayFor(modelItem => item.CourseId)' class="item">
+                <div class="item__course">
+                    <img class="course__img" src="@Html.DisplayFor(modelItem => item.image)" />
+                    <h3>@Html.DisplayFor(modelItem => item.Course_name)</h3>
+                    <p>
+                        @Html.DisplayFor(modelItem => item.Course_description)
+                    </p>
+                </div>
+            </a>
+        }
+    </div>
+}
+

@@ -1,0 +1,43 @@
+﻿@model assignment.Models.CourseCategory
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+
+<p class="title">
+    Detail category __ &#128075; &#128075;
+</p>
+<div class="flex gap-30 flex-col letter-3">
+    <div class="flex items-center gap-20">
+        <h2>@Html.DisplayFor(model => model.Category_name)</h2>
+        <a href='/staff/update-category/@Html.DisplayFor(model => model.CategoryId)' class="blue">
+            <i class="far fa-edit"></i>
+        </a>
+        <form method="post" action="/staff/delete-category">
+            <input type="hidden" value="@Html.DisplayFor(modelItem => Model.CategoryId)" name="CategoryId"/>
+            <button class="bt__bth" type="submit">
+                <i class="far fa-trash-alt"></i>
+            </button>
+        </form>
+        
+    </div>
+    <div>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.CategoryId): </span>
+            <span>@Html.DisplayFor(model => model.CategoryId)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Category_name): </span>
+            <span>@Html.DisplayFor(model => model.Category_name)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Category_description): </span>
+            <span>@Html.DisplayFor(model => model.Category_description)</span>
+        </p>
+        <p class='text'>
+            <span>Courses : </span>
+        </p>
+    </div>
+     @{ Html.RenderAction("getCoursesByCt", "Course", new { id = Model.CategoryId });}
+</div>

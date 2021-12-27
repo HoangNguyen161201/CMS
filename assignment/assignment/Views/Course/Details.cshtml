@@ -1,0 +1,52 @@
+﻿@model assignment.Models.Course
+
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+<p class="title">
+    Detail course __ &#127882; &#127882;
+</p>
+<div class="flex gap-30 flex-col letter-3">
+    <div class="flex items-center gap-20">
+        <h2>@Html.DisplayFor(model => model.Course_name)</h2>
+        <a href='/staff/update-course/@Html.DisplayFor(model => model.CourseId)' class="blue">
+            <i class="far fa-edit"></i>
+        </a>
+        <a href='/staff/add-trainees/@Html.DisplayFor(model => model.CourseId)' class="blue">
+            <i class="fas fa-user-plus blue"></i> 
+        </a>
+    </div>
+    <div>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.CourseId): </span>
+            <span>@Html.DisplayFor(model => model.CourseId)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Course_name): </span>
+            <span>@Html.DisplayFor(model => model.Course_name)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Course_description): </span>
+            <span>@Html.DisplayFor(model => model.Course_description)</span>
+        </p>
+        <p class='text'>
+            <span>Topics:</span>
+        </p>
+    </div>
+    @{ Html.RenderAction("getTopicByCourse", "Topic", new { id = Model.CourseId });}
+    <p class="text">
+        <span>Trainees:</span>
+    </p>
+    @{ Html.RenderAction("TraineesInCourse", "AssignCourse", new { id = Model.CourseId });}
+</div>

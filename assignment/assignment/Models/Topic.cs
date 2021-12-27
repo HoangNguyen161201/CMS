@@ -32,7 +32,7 @@ namespace assignment.Models
         public string Topic_description { get; set; }
         public string image { get; set; }
         public Nullable<int> CourseId { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssignTopic> AssignTopics { get; set; }
         public virtual Course Course { get; set; }

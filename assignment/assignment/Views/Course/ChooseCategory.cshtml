@@ -1,0 +1,8 @@
+﻿@model assignment.Models.CourseCategory
+
+@{
+    Layout = null;
+}
+
+
+@Html.DropDownListFor(s => s.CategoryId, new SelectList(Model.cateCollection, "CategoryId", "Category_name", "--Select--"), new { @class= "select"})
