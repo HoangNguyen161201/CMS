@@ -1,0 +1,49 @@
+﻿@model IEnumerable<assignment.Models.Topic>
+
+@{
+    Layout = null;
+}
+
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+<div class="items">
+    @if (Session["roll"].ToString() == "Staff")
+    {
+        foreach (var item in Model)
+        {
+            <a href='/staff/details-topic/@Html.DisplayFor(modelItem => item.TopicId)' class="item">
+                <div class="item__course">
+                    <img class="course__img" src="@Html.DisplayFor(modelItem => item.image)" />
+                    <h3 class="course__name">@Html.DisplayFor(modelItem => item.Topic_name)</h3>
+                    <div>
+                        <p class="category__name">Course - @Html.DisplayFor(modelItem => item.Course.Course_name)  </p>
+                        <p class="description">@Html.DisplayFor(modelItem => item.Topic_description)</p>
+                    </div>
+                </div>
+            </a>
+        }
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="item">
+                <div class="item__course">
+                    <img class="course__img" src="@Html.DisplayFor(modelItem => item.image)" />
+                    <h3 class="course__name">@Html.DisplayFor(modelItem => item.Topic_name)</h3>
+                    <div>
+                        <p class="category__name">Course - @Html.DisplayFor(modelItem => item.Course.Course_name)  </p>
+                        <p class="description">@Html.DisplayFor(modelItem => item.Topic_description)</p>
+                        <p>Trainer:</p>
+                        @{ Html.RenderAction("TrainersNameId", "AssignTopic", new { id = item.TopicId });}
+                    </div>
+                </div>
+            </div>
+
+        }
+    }
+
+</div>
+}

@@ -1,0 +1,60 @@
+﻿@model assignment.Models.Topic
+
+
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Create topic __ &#9917;
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="gridForm">
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Topic_name)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Topic_name, new { placeholder = "Enter topic name ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Topic_name, null, new { @class = "error" })
+        </div>
+
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.CourseId)
+                </p>
+                <div class="input inputBlur">
+                    @{Html.RenderAction("ChooseCourse");}
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.Topic_description)
+            </p>
+            @Html.TextAreaFor(model => model.Topic_description, new { placeholder = "Enter experience details ...", @class = "input inputBlur" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Topic_description, null, new { @class = "error" })
+    </div>
+    <button class="bt__default">Save</button>
+}
+
+
+
+
+

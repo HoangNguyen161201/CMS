@@ -1,0 +1,56 @@
+﻿@model IEnumerable<assignment.Models.Topic>
+
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<p class="title">
+    Show topics __ &#127880;
+</p>
+
+<div class="items">
+    @foreach (var item in Model)
+    {
+        <div href="/ddfdfdf" class="item">
+            <div class="item__course">
+                <img class="course__img" src="@Html.DisplayFor(modelItem=> item.image)" />
+                <h3 class="topic__name">@Html.DisplayFor(modelItem => item.Topic_name)</h3>
+                <div>
+                    <p class="course__name">Course - @Html.DisplayFor(modelItem => item.Course.Course_name)  </p>
+                    <p class="description">@Html.DisplayFor(modelItem => item.Topic_description)</p>
+                </div>
+                <div>
+                    <nav>
+                        @Html.ActionLink("Update", "Edit", new { id = item.TopicId }, new { @class = "linkFunc" }) /
+                        @Html.ActionLink("Details", "Details", new { id = item.TopicId }, new { @class = "linkFunc" }) /
+                        <a class="linkFunc delete" href="#" data-action="delete-topic" data-name-input="TopicId" data-name="topic" data-input="@Html.DisplayFor(modelItem => item.TopicId)">Delete</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    document.getElementById('search').addEventListener("input", (e) => {
+        search(e.target.value, ['course__name', 'topic__name', 'description'])
+    })
+</script>
