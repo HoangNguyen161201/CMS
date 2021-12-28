@@ -1,0 +1,55 @@
+﻿@model assignment.Models.Trainer
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+
+<p class="title">
+    Detail trainer __ &#127866; &#127866;
+</p>
+<div class="flex gap-30 flex-col letter-3">
+    <div class="flex items-center gap-20">
+        <h2>@Html.DisplayFor(model => model.TrainerId)</h2>
+        <a href='/staff/update-trainer/@Html.DisplayFor(model => model.TrainerId)' class="blue">
+            <i class="far fa-edit"></i>
+        </a>
+    </div>
+    <img class="avatar isborder size-80 rect" src="@Html.DisplayFor(model => model.image)" />
+    <div>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainer_fullname): </span>
+            <span>@Html.DisplayFor(model => model.Trainer_fullname)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainer_email): </span>
+            <span>@Html.DisplayFor(model => model.Trainer_email)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.trainer_phone): </span>
+            <span>@Html.DisplayFor(model => model.trainer_phone)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainer_type): </span>
+            <span>@Html.DisplayFor(model => model.Trainer_type)</span>
+        </p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
