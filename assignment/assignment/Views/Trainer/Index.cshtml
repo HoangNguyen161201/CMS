@@ -1,0 +1,55 @@
+﻿@model IEnumerable<assignment.Models.Trainer>
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<p class="title">
+    Show trainers __ &#128585; &#128584;
+</p>
+
+<div class="items">
+    @foreach (var item in Model)
+    {
+        <div class="item">
+            <img class="avatar" src="@Html.DisplayFor(modelItem => item.image)" />
+            <div class='information'>
+                <div>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.TrainerId)  :</span> <span class="id">@Html.DisplayFor(modelItem => item.TrainerId)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainer_fullname):</span> <span class="fullname">@Html.DisplayFor(modelItem => item.Trainer_fullname)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.trainer_phone) :</span> <span class="phone">@Html.DisplayFor(modelItem => item.trainer_phone)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainer_email) :</span> <span class="email">@Html.DisplayFor(modelItem => item.Trainer_email)</span></p>
+                </div>
+                <div>
+                    <nav>
+                        @Html.ActionLink("Update", "Edit", new { id = item.TrainerId }, new { @class = "linkFunc" }) /
+                        @Html.ActionLink("Details", "Details", new { id = item.TrainerId }, new { @class = "linkFunc" })
+                    </nav>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+<script>
+    document.getElementById('search').addEventListener("input", (e) => {
+        search(e.target.value, ['fullname', 'id', 'phone', 'email'])
+    })
+</script>

@@ -1,0 +1,92 @@
+﻿@model assignment.Models.Trainer
+
+@{
+    Layout = null;
+}
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Edit trainer __ &#127852;
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Trainer_username)
+    @Html.HiddenFor(model => model.Trainer_password)
+    @Html.HiddenFor(model => model.TrainerId)
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.TrainerId) <span>*</span>
+            </p>
+            <div class="input inputBlur">
+                <i class="fas fa-key"></i>
+                @Html.TextBoxFor(model => model.TrainerId, new { disabled = "disabled" })
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.TrainerId, null, new { @class = "error" })
+    </div>
+
+    <div class="gridForm">
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainer_fullname)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Trainer_fullname, new { placeholder = "Enter fullname ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainer_fullname, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainer_email)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Trainer_email, new { placeholder = "Enter EMAIL ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainer_email, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.trainer_phone)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.PasswordFor(model => model.trainer_phone, new { placeholder = "Enter number phone ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.trainer_phone, null, new { @class = "error" })
+        </div>
+        <div>
+
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainer_type)
+                </p>
+                <div class="input inputBlur">
+                    <select name="Trainer_type" class="select" >
+                            <option value="external">external</option>
+                            <option value="internal">internal</option>
+                    </select>
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainer_type, null, new { @class = "error" })
+        </div>
+    </div>
+    <button class="bt__default">Save</button>
+}
+
