@@ -1,0 +1,39 @@
+﻿@model IEnumerable<assignment.Models.AssignTopic>
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Show Courses __ &#127752; &#9969;
+</p>
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    <div class="items">
+        @foreach (var item in Model)
+        {
+            <a href="/trainer/details-course/@Html.DisplayFor(modelItem=> item.Topic.CourseId)" class="item">
+                <div class="item__course">
+                    <img class="course__img" src="@Html.DisplayFor(modelItem=> item.Topic.Course.image)" />
+                    <h3 class="course__name">@Html.DisplayFor(modelItem => item.Topic.Course.Course_name)</h3>
+                    <div>
+                        <p class="category__name">Category - @Html.DisplayFor(modelItem => item.Topic.Course.CourseCategory.Category_name)</p>
+                        <p class="description">@Html.DisplayFor(modelItem => item.Topic.Course.Course_description)</p>
+                    </div>
+                </div>
+            </a>
+        }
+
+    </div>
+
+    <script>
+        document.getElementById('search').addEventListener("input", (e) => {
+            search(e.target.value, ['course__name', 'category__name', 'description'])
+        })
+
+    </script>
+}
+

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<assignment.Models.Trainer>
+
+
+
+@{
+    Layout = null;
+}
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TrainerId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Trainer_fullname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.trainer_phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Trainer_email)
+                </th>
+                <th>
+                    Details
+                </th>
+                <th>
+                    Delete
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrainerId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Trainer_fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.trainer_phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Trainer_email)
+                    </td>
+                    <td>
+                        <a href="/staff/details-trainer/@Html.DisplayFor(modelItem => item.TrainerId)" style = "text-decoration: none; color: black" >
+                            Detail
+                        </a>
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete", "DeleteTrainer", new { idTrainer = item.TrainerId, idTopic = ViewBag.IdTopic }, new { style = "text-decoration: none; color: black" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

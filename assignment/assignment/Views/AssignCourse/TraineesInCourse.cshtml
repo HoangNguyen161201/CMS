@@ -1,0 +1,120 @@
+﻿@model IEnumerable<assignment.Models.Trainee>
+
+@{
+    Layout = null;
+}
+
+
+
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    if (Session["roll"].ToString() == "Staff")
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TraineeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_fullname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_age)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_TOEIC_score)
+                    </th>
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TraineeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_fullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_TOEIC_score)
+                        </td>
+                        <td>
+                            <a href="/staff/details-trainee/@Html.DisplayFor(modelItem => item.TraineeId)" style="text-decoration: none; color: black">
+                                Detail
+                            </a>
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "DeleteTrainee", new { idTrainee = item.TraineeId, idCourse = ViewBag.IdCourse }, new { style = "text-decoration: none; color: black" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TraineeId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_fullname)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_age)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_TOEIC_score)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_programming_language)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Trainee_education)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TraineeId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_fullname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_age)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_TOEIC_score)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_programming_language)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Trainee_education)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+}

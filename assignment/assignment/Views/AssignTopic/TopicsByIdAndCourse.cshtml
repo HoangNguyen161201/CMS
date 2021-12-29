@@ -1,0 +1,22 @@
+﻿@model IEnumerable<assignment.Models.AssignTopic>
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    <div class="items">
+
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <div class="item__course">
+                    <img class="course__img" src="@Html.DisplayFor(modelItem => item.Topic.image)" />
+                    <h3 class="course__name">@Html.DisplayFor(modelItem => item.Topic.Topic_name)</h3>
+                    <div>
+                        <p class="category__name">Course - @Html.DisplayFor(modelItem => item.Topic.Course.Course_name)  </p>
+                        <p class="description">@Html.DisplayFor(modelItem => item.Topic.Topic_description)</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

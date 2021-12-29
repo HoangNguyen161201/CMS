@@ -1,0 +1,50 @@
+﻿@model assignment.Models.Training_staff
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+
+<p class="title">
+    Profile __ &#127754;
+</p>
+<div class="flex gap-30 flex-col letter-3">
+    <div class="flex items-center gap-20">
+        <h2>@Html.DisplayFor(model => model.StaffId)</h2>
+        <a href='/staff/edit-profile' class="blue">
+            <i class="far fa-edit"></i>
+        </a>
+    </div>
+    <img class="avatar isborder size-80 rect" src="@Html.DisplayFor(model => model.image)" />
+    <div>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Staff_fullname): </span>
+            <span>@Html.DisplayFor(model => model.Staff_fullname)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Staff_username): </span>
+            <span>@Html.DisplayFor(model => model.Staff_username)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Staff_password): </span>
+            <span>@Html.DisplayFor(model => model.Staff_password)</span>
+        </p>
+    </div>
+</div>
+

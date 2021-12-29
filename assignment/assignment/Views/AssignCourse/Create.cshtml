@@ -1,0 +1,47 @@
+﻿@model IEnumerable<assignment.Models.Trainee>
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Create Account __ &#127826; &#127817;
+</p>
+
+
+@ViewBag.error
+@if (ViewBag.error == null)
+{
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="items">
+            @foreach (var item in Model)
+            {
+                <div class="item border-gray">
+                    <div class='information'>
+                        <div class="selectUser">
+                            <input type="checkbox" name="trainee" value="@Html.DisplayFor(modelItem => item.TraineeId)">
+                            <div class="user-inf">
+                                <img class="avatar isborder size-80 rect" src="@Html.DisplayFor(modelItem => item.image)" />
+                                <div>
+                                    <p class="text"><span>Id:</span> <span class="id">@Html.DisplayFor(modelItem => item.TraineeId)</span></p>
+                                    <p class="text"><span>Name :</span> <span class="fullname">@Html.DisplayFor(modelItem => item.Trainee_fullname)</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <br />
+        <button class="bt__default">Add trainees</button>
+    }
+}
+
+<script>
+    document.getElementById('search').addEventListener("input", (e) => {
+        search(e.target.value, ['id', 'fullname'])
+    })
+</script>
+

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<assignment.Models.AssignTopic>
+
+@{
+    Layout = null;
+}
+
+
+<ul style="margin-left: 40px">
+@foreach (var item in Model)
+{
+    <li>
+        <p>
+            <span>@Html.DisplayFor(modelItem => item.TrainerId)</span> - <span>@Html.DisplayFor(modelItem => item.Trainer.Trainer_username)</span>
+        </p>
+    </li>
+}
+</ul>
+
+
