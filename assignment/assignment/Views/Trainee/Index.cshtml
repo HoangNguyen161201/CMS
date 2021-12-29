@@ -1,0 +1,58 @@
+﻿@model IEnumerable<assignment.Models.Trainee>
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+@if (@TempData["message"] != null)
+{
+    <div class="toast toast__success">
+        <p>&#128077;</p>
+        <p> @TempData["message"] </p>
+    </div>
+}
+
+@if (@TempData["Error"] != null)
+{
+    <div class="toast toast__error">
+        <p>&#128078;</p>
+        <p> @TempData["Error"] </p>
+    </div>
+}
+
+<p class="title">
+    Show trainees __ &#127964;
+</p>
+
+<div class="items">
+    @foreach (var item in Model)
+    {
+        <div class="item">
+            <img class="avatar" src="@Html.DisplayFor(modelItem => item.image)" />
+            <div class='information'>
+                <div>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.TraineeId)  :</span> <span class="id">@Html.DisplayFor(modelItem => item.TraineeId)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainee_fullname):</span> <span class="fullname">@Html.DisplayFor(modelItem => item.Trainee_fullname)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainee_username) :</span> <span class="username">@Html.DisplayFor(modelItem => item.Trainee_username)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainee_password) :</span> <span class="password">@Html.DisplayFor(modelItem => item.Trainee_password)</span></p>
+                    <p class="text"><span>@Html.DisplayNameFor(model => model.Trainee_TOEIC_score) :</span> <span class="toeic">@Html.DisplayFor(modelItem => item.Trainee_TOEIC_score)</span></p>
+                </div>
+                <div>
+                    <nav>
+                        @Html.ActionLink("Update", "Edit", new { id = item.TraineeId }, new { @class = "linkFunc" }) /
+                        @Html.ActionLink("Details", "Details", new { id = item.TraineeId }, new { @class = "linkFunc" }) /
+                        <a class="linkFunc delete" href="#" data-action="delete-trainee" data-name-input="TraineeId" data-name="trainee" data-input="@Html.DisplayFor(modelItem => item.TraineeId)">Delete</a>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>
+
+
+<script>
+    document.getElementById('search').addEventListener("input", (e) => {
+        search(e.target.value, ['username', 'fullname', 'password', 'id', 'toeic'])
+    })
+</script>

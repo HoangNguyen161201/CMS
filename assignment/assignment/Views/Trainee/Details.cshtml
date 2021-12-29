@@ -1,0 +1,65 @@
+﻿@model assignment.Models.Trainee
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+
+<p class="title">
+    Detail trainee __ &#127961; &#127961;
+</p>
+<div class="flex gap-30 flex-col letter-3">
+    <div class="flex items-center gap-20">
+        <h2>@Html.DisplayFor(model => model.TraineeId)</h2>
+        <a href='/staff/update-trainee/@Html.DisplayFor(model => model.TraineeId)' class="blue">
+            <i class="far fa-edit"></i>
+        </a>
+    </div>
+    <img class="avatar isborder size-80 rect" src="@Html.DisplayFor(model => model.image)" />
+    <div>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_fullname): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_fullname)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_username): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_username)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_password): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_password)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_age): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_age)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_birthday): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_birthday)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_education): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_education)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_TOEIC_score): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_TOEIC_score)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_programming_language): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_programming_language)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_department): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_department)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_exprience_details): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_exprience_details)</span>
+        </p>
+        <p class='text'>
+            <span>@Html.DisplayNameFor(model => model.Trainee_location): </span>
+            <span>@Html.DisplayFor(model => model.Trainee_location)</span>
+        </p>
+    </div>
+</div>

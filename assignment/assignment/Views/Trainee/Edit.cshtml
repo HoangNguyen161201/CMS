@@ -1,0 +1,142 @@
+﻿@model assignment.Models.Trainee
+
+
+@{
+    Layout = "../Shared/_LayoutMain.cshtml";
+}
+
+<p class="title">
+    Edit trainee __ &#129704; &#129521;
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Trainee_username)
+    @Html.HiddenFor(model => model.Trainee_password)
+    @Html.HiddenFor(model => model.TraineeId)
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.TraineeId)
+            </p>
+            <div class="input inputBlur">
+                <i class="fas fa-key"></i>
+                @Html.TextBoxFor(model => model.TraineeId, new { placeholder = "Enter your Id ...", disabled = "disabled" })
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.TraineeId, null, new { @class = "error" })
+    </div>
+
+    <div class="gridForm">
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_fullname)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-pencil-alt"></i>
+                    @Html.TextBoxFor(model => model.Trainee_fullname, new { placeholder = "Enter trainee fullname ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_fullname, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_TOEIC_score)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-user"></i>
+                    @Html.TextBoxFor(model => model.Trainee_TOEIC_score, new { placeholder = "Enter trainee username ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_TOEIC_score, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_age)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    @Html.TextBoxFor(model => model.Trainee_age, new { placeholder = "Enter trainee age ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_age, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_birthday)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    <input type="date" name="Trainee_birthday" value="@ViewBag.date" />
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_birthday, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_programming_language)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    @Html.TextBoxFor(model => model.Trainee_programming_language, new { placeholder = "Enter programming language ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_programming_language, null, new { @class = "error" })
+        </div>
+        <div>
+            <div class="formControll">
+                <p class='label_input'>
+                    @Html.LabelFor(model => model.Trainee_education)
+                </p>
+                <div class="input inputBlur">
+                    <i class="fas fa-unlock"></i>
+                    @Html.TextBoxFor(model => model.Trainee_education, new { placeholder = "Enter Education ..." })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Trainee_education, null, new { @class = "error" })
+        </div>
+    </div>
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.Trainee_department)
+            </p>
+            <div class="input inputBlur">
+                <i class="fas fa-pencil-alt"></i>
+                @Html.TextBoxFor(model => model.Trainee_department, new { placeholder = "Enter trainee department ..." })
+            </div>
+        </div>
+        @Html.ValidationMessageFor(model => model.Trainee_department, null, new { @class = "error" })
+    </div>
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.Trainee_exprience_details)
+            </p>
+            @Html.TextAreaFor(model => model.Trainee_exprience_details, new { placeholder = "Enter experience details ...", @class = "input inputBlur" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Trainee_exprience_details, null, new { @class = "error" })
+    </div>
+    <div>
+        <div class="formControll">
+            <p class='label_input'>
+                @Html.LabelFor(model => model.Trainee_location)
+            </p>
+            @Html.TextAreaFor(model => model.Trainee_location, new { placeholder = "Enter locaiton ...", @class = "input inputBlur" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Trainee_birthday, null, new { @class = "error" })
+    </div>
+
+    <div>
+    </div>
+    <button class="bt__default">Save</button>
+}
+
