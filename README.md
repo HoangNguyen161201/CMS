@@ -2,7 +2,7 @@
 
 use asp Dotnet to create CMS project and use entity framework to create models and connect to the database (MySql), here are the features of each user in the project:
 
-*Admin:
+* Admin:
   * login.
   * Manage trainer and staff accounts (show account, create an account, update and delete account).
 
