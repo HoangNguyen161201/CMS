@@ -10,7 +10,7 @@ There are 4 main modules, each with specific roles in the system that will tell 
 - Trainer module
 - Trainee Module
 - Training – Staff Module
-- 
+
 * Admin:
   * login.
 
