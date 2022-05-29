@@ -2,7 +2,9 @@
 
 use asp Dotnet to create CMS project and use entity framework to create models and connect to the database (MySql), here are the features of each user in the project:
 Our product for FPT Co. is a web-based application using ASP.NET technology and SLQ Server database that will allow users to manage their course and topic about training activity of the company with easy-to-use user interface and beautiful. This application can give administrators, staff, trainers, and trainees the rights to interact with data based on the role of each of them.
+
 The system will manage training for the FPT system including creating, updating, and deleting staff, trainer, and trainee accounts. Create courses, topics, and categories. Schedule courses, assign a trainer to a topic, assign trainee to course.
+
 There are 4 main modules, each with specific roles in the system that will tell us that it is a school management system. Following are the main modules that we will integrate into the system:
 - Administration Module
 - Trainer module
